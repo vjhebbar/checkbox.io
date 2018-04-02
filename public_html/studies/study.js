@@ -148,6 +148,7 @@ function deliverSurvey( answers, fingerprint, id, showCodeOnComplete )
 		if( $("input[type='file']").length > 0 )
 		{
 			alert("File upload not supported in IE 9 or less.")
+			alert("This is a message")
 			return;
 		}
 		// LEGACY IE
@@ -163,6 +164,7 @@ function deliverSurvey( answers, fingerprint, id, showCodeOnComplete )
 		if( files.length == 0 )
 		{
 			alert("File upload is required.");
+			alert("Another message");
 			return;
 		}
 	}
