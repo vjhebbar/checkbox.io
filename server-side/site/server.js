@@ -9,7 +9,6 @@ var express = require('express'),
 	admin = require('./routes/admin.js');
 
 var app = express();
-var a = "Test";
 
 app.configure(function () {
     app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
