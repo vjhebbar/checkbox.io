@@ -163,6 +163,7 @@ function deliverSurvey( answers, fingerprint, id, showCodeOnComplete )
 		if( files.length == 0 )
 		{
 			alert("File upload is required.");
+			alert("Random text");
 			return;
 		}
 	}
