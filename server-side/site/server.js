@@ -9,7 +9,7 @@ var express = require('express'),
 	admin = require('./routes/admin.js');
 
 var app = express();
-var a = "Testing";
+var a = "Testing Travis with sonarQube";
 
 app.configure(function () {
     app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
