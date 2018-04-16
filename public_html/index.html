@@ -44,7 +44,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="./"><i class="icon-check-empty icon-pint"></i> checkbox.io</a>
+				<a class="brand" href="./"><i class="icon-check-empty icon-pint"></i> <span id="featureflag">checkbox.io<span></a>
 				<div class="nav-collapse collapse" id="main-menu">
 					<ul class="nav" id="main-menu-left">
 						<li><a href="developers.html">Developers</a></li>
@@ -55,6 +55,19 @@
 			</div>
 		</div>
 	</div>
+<script>
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("GET", "http://localhost/api/featureflag", true);
+	xhttp.onload = function () {
+		if (xhttp.readyState === xhttp.DONE) {
+			if (xhttp.responseText == "true") {
+				var a = document.getElementById("featureflag");
+				a.innerHTML = "feature.io";
+			}
+		}
+	}
+	xhttp.send(); 
+</script>
 
 	<div class="container">
 
