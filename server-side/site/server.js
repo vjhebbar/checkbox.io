@@ -87,7 +87,7 @@ app.post('/api/study/admin/notify/', admin.notifyParticipant);
 //app.get('/api/design/survey/vote/stat/:id', votes.getSurveyStats );
 
 app.get('/api/featureflag', function (req, res) {
-	client.get("value", function (err, value) {
+	client.get("featureflag", function (err, value) {
 	  res.send(value);
 	});
 });
