@@ -7,6 +7,9 @@ var express = require('express'),
 	create = require('./routes/create.js'),
 	study = require('./routes/study.js'),
 	admin = require('./routes/admin.js');
+	
+var redis = require('redis')
+var client = redis.createClient(6379, '127.0.0.1', {})
 
 var app = express();
 
@@ -83,6 +86,11 @@ app.post('/api/study/admin/notify/', admin.notifyParticipant);
 //app.get('/api/design/survey/vote/status', votes.status );
 //app.get('/api/design/survey/vote/stat/:id', votes.getSurveyStats );
 
+app.get('/api/featureflag', function (req, res) {
+	client.get("value", function (err, value) {
+	  res.send(value);
+	});
+});
 
 
 app.listen(process.env.MONGO_PORT);
